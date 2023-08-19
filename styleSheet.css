@@ -3,6 +3,11 @@
     background-color: #333;
     position: relative;
   }
+body {
+  background: linear-gradient(to bottom, black, gold);
+  /* You can adjust the direction of the gradient (e.g., 'to bottom', 'to right', etc.) */
+  /* You can also experiment with different shades of gold */
+}
   
   /* Hide the links inside the navigation menu (except for logo/home) */
   .topnav #myLinks {
