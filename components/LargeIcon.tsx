@@ -20,8 +20,7 @@ export function LargeIcon(props: LargeIconProps) {
         className="rounded-3xl"
         src={props.imageUrl}
         alt={props.alt}
-        width="300px"
-        height="300px"
+        
       />
     </div>
   );
