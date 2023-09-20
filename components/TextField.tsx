@@ -10,7 +10,7 @@ interface TextFieldProps {
   placeholder?: string;
   optional?: boolean;
   required?: boolean;
-  lines?: number;
+  lines: number;
 }
 
 export default function TextField(props: TextFieldProps) {
