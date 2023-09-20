@@ -14,7 +14,7 @@ interface TextFieldProps {
 }
 
 export default function TextField(props: TextFieldProps) {
-  function enterAction(e) {
+  function enterAction(e: any) {
     if (props.onEnter && e.key === 'Enter') {
       props.onEnter();
     }
