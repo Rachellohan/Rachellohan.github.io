@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400&family=Noto+San+JP:wght@100&family=Noto+Sans+KR:wght@700;900&family=Roboto&display=swap');
+:root {
+    --theme-pri: white;
+    --theme-sec: gold;
+    --theme-ter: black;
+}
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+html {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+.sec1 {
+    background-image: url(img/developer_img1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+.sec1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.75;
+    z-index: -1;
+}
+.head {
+    /* border: 2px solid red; */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: red; */
+    text-align: left;
+}
+#headName {
+    margin: 0 10%;
+}
+#headName h1 {
+    display: block;
+    width: fit-content;
+    font-size: 2.5rem;
+    position: relative;
+    color: transparent;
+    animation: text-reveal 1s ease forwards;
+    /* animation-delay: 1.5s; */
+}
+#headName h4{
+    display: block;
+    width: fit-content;
+    position: relative;
+    color: transparent;
+    animation: text-reveal-2 1s ease forwards;
+    animation-delay: 3.5s;
+    margin: 6px 0 0;
+}
+/* #headName h1::selection {
+    display: none;
+    background: white;
+    color: black;
+} */
+#headName h1:nth-child(1) {
+    animation-delay: 1.5s;
+}
+#headName h1:nth-child(2) {
+    animation-delay: 2.5s;
+}
+@keyframes text-reveal {
+    100% {
+        color: var(--theme-pri);
+    }
+}
+@keyframes text-reveal-2 {
+    100% {
+        color: rgba(255, 255 , 255, .7);
+        /* color: white; */
+    }
+}
+#headName h1 span, #headName h4 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--theme-sec);
+    animation: text-reaveal-box 1s ease;
+    /* animation-delay: 1s; */
+}
+#headName h1:nth-child(1) span {
+    animation-delay: 1s;
+}
+#headName h1:nth-child(2) span {
+    animation-delay: 2s;
+}
+#headName h4 span{
+    animation-delay: 3s;
+}
+@keyframes text-reaveal-box {
+    0% {
+        width: 0;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+#headButton,
+.content3 a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--theme-sec);
+    border: 2px solid var(--theme-sec);
+    width: fit-content;
+    padding: 1% 2%;
+    margin: 1% 10%;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+#headButton:hover {
+    /* border: 2px solid gray; */
+    background-color: rgba(255, 0, 0, 0.1);
+    color: white;
+}
+/* Section 2 */
+.sec2,
+.sec3 {
+    /* border: 2px solid blue; */
+    padding-top: 50px;
+}
+.head2 {
+    /* border: 2px solid red; */
+    margin: 0 5% 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+}
+/* .head2 img{
+    border: 2px solid red;
+    margin: 0 auto;
+    height: 5rem;
+    width:fit-content;
+} */
+.head2 h1,
+.head3 h1,
+.footer h2 {
+    /* border: 2px solid red; */
+    text-transform: uppercase;
+    margin: 1% 0;
+    font-size: 2rem;
+    color: var(--theme-sec);
+    text-shadow: 0px 0px 0px black;
+    letter-spacing: .2rem;
+    /* color: white; */
+    transition: all 0.5s;
+}
+.head2 h1:hover,
+.head3 h1:hover {
+    text-shadow: 10px 10px 10px silver;
+}
+.content2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    /* margin: -10px; */
+}
+.box {
+    /* border: 2px solid red; */
+    height: fit-content;
+    width: 300px;
+    margin: 10px 20px;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    border-radius: 10px;
+    background-image: url('img/box-bg.jpg');
+    background-attachment: fixed;
+    background-position: left;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    /*This is to make image stay under curved borders*/
+    transition: all .5s ease;
+    /* background-size: cover; */
+    /* background-position: center; */
+    box-shadow: 2px 2px 1px black;
+}
+.box::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    z-index: -1;
+}
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 10px silver;
+    /* border: 2px solid black; */
+}
+.box img{
+    height: 70px;
+}
+.box h2 {
+    padding: 3% 0%;
+    margin: 0;
+    font-size: larger;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5%;
+}
+/* .box h2:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+} */
+.box p {
+    font-size: medium;
+    display: none;
+}
+.sec3 {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.head3 {
+    /* border: 2px solid blue; */
+    padding: 0 10%;
+}
+.head3 h5 {
+    letter-spacing: .2rem;
+    font-size: large;
+    margin-bottom: 5px;
+}
+.head3 p{
+    margin: 0 10%;
+}
+.content3 {
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content3 a:hover {
+    background-color: var(--theme-sec);
+    color: var(--theme-pri);
+}
+.content3 img {
+    /* border: 2px solid red; */
+    height: fit-content;
+    width: 200px;
+    box-shadow: -5px 5px var(--theme-sec);
+    margin: 10px;
+    transition: all 0.5s ease;
+}
+.content3 img:hover {
+    box-shadow: -8px 8px gold(246, 255, 0, 0.9);
+    transform: scale(1.05);
+}
+.footer {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px 0;
+    /* background-color: var(--theme-sec); */
+    background-image: url('img/developer_img1.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+.footer::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.9;
+    z-index: -1;
+}
+.footer h2 {
+    color: var(--theme-pri);
+}
+.footer ul {
+    display: flex;
+    margin: 10px;
+    list-style: none;
+}
+.footer ul li {
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: all .1s ease;
+}
+.footer li:hover {
+    transform: scale(1.05);
+    /* text-shadow: 0 0 5px rgba(0, 0, 255, 0.9); */
+}
+.footer img {
+    height: 30px;
+    filter: invert();
+    margin: 0 5px;
+}
+.footer a {
+    color: var(--theme-pri);
+    text-decoration: none;
+}
+.nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255 , 255, .1);
+    /* border-radius: 10px; */
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.logo {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    /* border: 2px solid red; */
+    margin: 10px auto;
+    cursor: pointer;
+    /* text-shadow: 0 0 50px var(--theme-sec); */
+}
+.logo span {
+    color: var(--theme-sec);
+    font-weight: 900;
+}
+.logo:hover {
+    text-shadow: 0px 0px 10px rgba(255, 0, 0, .5);
+}
+.hlinks{
+    /* border: 2px solid red; */
+    margin: 10px auto;
+}
+.hlinks ul {
+    display: flex;
+    list-style: none;
+    /* border: 2px solid yellow; */
+    margin-right:50px;
+}
+.hlinks ul li {
+    /* border: 2px solid red; */
+    margin: 0 20px;
+}
+.hlinks ul li a {
+    /* border: 2px solid red; */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all .3s ease;
+}
+.hlinks ul li a:hover {
+    /* border: 2px solid red; */
+    color: var(--theme-sec);
+}
+
+/*-------------------- Responsiveness -----------------*/
+@media screen and (max-width : 910px) {
+    .hlinks ul li a{
+        font-size: .9rem;
+        /* color: red; */
+    }
+    .hlinks ul{
+        margin: 0;
+    }
+}
+@media screen and (max-width : 480px){
+    .footer li{
+        font-size: .5rem;
+    }
+    .footer h2{
+        font-size: 1.2rem;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+    .hlinks{
+        margin: 0 auto;
+    }
+    .hlinks ul li a{
+        font-size: .7rem;
+    }
+    .hlinks ul li{
+        margin: 0 10px;
+    }
+    #headName h1{
+        font-size: 1.8rem;
+    }
+    .head2 h1, .head3 h1{
+        font-size: 1.5rem;
+    }
+    .head2 p, .head3 p{
+        font-size: small;
+        margin: 0;
+    }
+    .box h2{
+        font-size: medium;
+    }
+    .box p{
+        font-size: small;
+    }
+    .content3 img{
+        width: 100px;
+    }
+    .content3 a{
+        font-size: .5rem;
+    }
+    .box img{
+        width: 50px;
+    }
+    #headButton{
+        font-size: .5rem;
+    }
+}
+@media screen and (max-width : 372px){
+    #headName h1{
+        font-size: 1.5rem;
+    }
+    .hlinks ul li a{
+        font-size: .5rem;
+    }
+    .logo{
+        font-size: .8rem;
+        margin: 0 auto;
+    }
+    .head2 h1, .head3 h1{
+        font-size: 1rem;
+    }
+    .head2 p, .head3 p{
+        font-size: x-small;
+    }
+    .box h2{
+        font-size: small;
+    }
+    .box p{
+        font-size: x-small;
+    }
+    
+}
+@media screen and (max-width : 250px){
+    .hlinks ul li a{
+        font-size: .3rem;
+    }
+    .logo{
+        font-size: .5rem;
+    }
+    .footer h2{
+        font-size: .8rem;
+    }
+    
+}
+@media screen and (max-width : 300px) {
+    .footer h2{
+        font-size: 1.1rem;
+    }
+    .footer li a{
+        display:none;
+        /* color: transparent; */
+    }
+}
